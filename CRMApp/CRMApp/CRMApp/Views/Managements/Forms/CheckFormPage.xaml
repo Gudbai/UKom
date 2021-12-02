@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:CRMApp.Models.Forms"
+             x:Class="CRMApp.Views.Managements.Forms.CheckFormPage"
+             BackgroundColor="#ebebeb"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.BindingContext>
+        <local:FormInfoRepository x:Name="viewModel" />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid HeightRequest="60" MinimumHeightRequest="60" BackgroundColor="Black">
+                <ImageButton x:Name="BtnBack" Source="BackButton.png" Scale="1" Clicked="OnButtonClick" HorizontalOptions="Start" Padding="10" BackgroundColor="Transparent"/>
+                <Label Text="Create Form" FontSize="30" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            </Grid>
+
+            <SearchBar x:Name="SBFilterText"
+                       Placeholder="Search Form"
+                       HorizontalOptions="CenterAndExpand"/>
+
+            <Grid BackgroundColor="Silver" Padding="5" Margin="20, 0" VerticalOptions="CenterAndExpand" HeightRequest="363">
+                <ListView x:Name="ListViewForm" BackgroundColor="White" RowHeight="65" Margin="5" ItemsSource="{Binding FormInfoCollection}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <BoxView Color="Blue" WidthRequest="10"/>
+
+                                    <StackLayout Orientation="Vertical" Spacing="-3">
+                                        <Label Text="{Binding FormName}" TextColor="Black" FontSize="21"/>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="ID:" TextColor="Black" FontSize="15"/>
+                                            <Label Text="{Binding FormID}" TextColor="Black" FontSize="15"/>
+                                        </StackLayout>
+                                        <Label Text="{Binding FormCreation}" TextColor="Black" FontSize="15"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+
+            <Button x:Name="BtnSelected" Text="Edit Selected" Margin="0, 5, 30, 10" HeightRequest="40" TextColor="White" HorizontalOptions="EndAndExpand" BackgroundColor="Black" Clicked="OnButtonClick"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

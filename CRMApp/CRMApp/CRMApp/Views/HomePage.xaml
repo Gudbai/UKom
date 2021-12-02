@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:CRMApp.Models.Forms"
+             x:Class="CRMApp.Views.HomePage"
+             BackgroundColor="#ebebeb">
+    <ContentPage.BindingContext>
+        <local:FormInfoRepository x:Name="viewModel" />
+    </ContentPage.BindingContext>
+    
+    <StackLayout x:Name="MasterLayout" Spacing="30">
+        <Grid x:Name="Card">
+            <Image x:Name="CardBackground" Source="CardBackground2.png" Margin="20,20,20,0"/>
+            <StackLayout Margin="35,30,0,0" Spacing="15">
+                <StackLayout Spacing="-20">
+                    <Grid>
+                        <Label x:Name="LblWelcome" Text="Welcome," FontSize="27" TextColor="White"/>
+                        <ImageButton x:Name="BtnSettings" Source="SettingsButton.png" Scale="1" Clicked="OnSettingsClick" HorizontalOptions="EndAndExpand" BackgroundColor="Transparent" Margin="0, 0, 30, 0" HeightRequest="50" WidthRequest="50"/>
+                    </Grid>
+                    <StackLayout Spacing="-2">
+                        <Label x:Name="LblName" Text="Ascended Galang" FontSize="27" TextColor="White"/>
+                        <Label x:Name="LblEmail" Text="galang123@gmail.com" FontSize="15" TextColor="White"/>
+                        <Label x:Name="LblPhone" Text="+01-234-567-89" FontSize="15" TextColor="White"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout>
+                    <Label x:Name="LblCompany" Text="Galang Corps" FontSize="23" TextColor="White"/>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+
+        <StackLayout x:Name="RecentActivitiesStack" Spacing="-5">
+            <Label Text="Recent Activities" TextColor="Black" FontSize="25" Margin="20, 0"/>
+
+            <Grid BackgroundColor="Silver" Padding="5" Margin="20, 0" VerticalOptions="CenterAndExpand" HeightRequest="363">
+                <ListView x:Name="ListViewForm" BackgroundColor="White" RowHeight="50" Margin="5" ItemsSource="{Binding FormInfoCollection}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <BoxView Color="Blue" WidthRequest="10"/>
+
+                                    <StackLayout Orientation="Vertical" Spacing="-3">
+                                        <Label Text="{Binding FormName}" TextColor="Black" FontSize="21"/>
+                                        <Label Text="{Binding FormCreation}" TextColor="Black" FontSize="15"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

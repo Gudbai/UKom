@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CRMApp.Views.Managements.MasterFiles.SetupList.AreaPage"
+             BackgroundColor="#ebebeb"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout Spacing="0">
+            <Grid HeightRequest="60" MinimumHeightRequest="60" BackgroundColor="Black">
+                <ImageButton x:Name="BtnBack" Source="BackButton.png" Scale="1" Clicked="OnButtonClick" HorizontalOptions="Start" Padding="10" BackgroundColor="Transparent"/>
+                <Label x:Name="LblTitle" Text="Setup Area" FontSize="30" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            </Grid>
+
+            <ScrollView Padding="10,0,10,0">
+                <StackLayout Spacing="10" Padding="0,10,0,10">
+                    <StackLayout Spacing="-10">
+                        <Label Text="Area Code:" FontSize="25" TextColor="Black"/>
+                        <Entry x:Name="EntryCode" FontSize="20" TextColor="Black" Placeholder="Code" PlaceholderColor="Gray" Margin="-3,0,0,0"/>
+                    </StackLayout>
+
+                    <StackLayout Spacing="-10">
+                        <Label Text="Area Description:" FontSize="25" TextColor="Black"/>
+                        <Entry x:Name="EntryDescription" FontSize="20" TextColor="Black" Placeholder="Description" PlaceholderColor="Gray" Margin="-3,0,0,0"/>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+
+            <Button x:Name="BtnCreate" Text="Confirm" TextTransform="None" TextColor="White" FontSize="30" BackgroundColor="Black" VerticalOptions="EndAndExpand" HeightRequest="60" MinimumHeightRequest="60" Clicked="OnButtonClick"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,10 @@
+﻿[*.{cs,vb}]
+
+# IDE0032: Use auto property
+dotnet_style_prefer_auto_properties = false
+
+# IDE0058: Expression value is never used
+csharp_style_unused_value_expression_statement_preference = discard_variable
+
+# IDE0058: Expression value is never used
+dotnet_diagnostic.IDE0058.severity = none

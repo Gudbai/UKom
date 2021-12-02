@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CRMApp.Views.Managements.MasterFiles.FilesListPage"
+             BackgroundColor="#ebebeb"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid HeightRequest="60" MinimumHeightRequest="60" BackgroundColor="Black">
+                <ImageButton x:Name="BtnBack" Source="BackButton.png" Scale="1" Clicked="OnButtonClick" HorizontalOptions="Start" Padding="10" BackgroundColor="Transparent"/>
+                <Label x:Name="LblName" Text="Setup Master File" FontSize="30" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            </Grid>
+
+            <StackLayout VerticalOptions="CenterAndExpand" Spacing="35">
+                <Button x:Name="BtnDebtor" ClassId="BtnDebtor" Text="Debtor" TextTransform="None" Clicked="OnButtonClick" BackgroundColor="Black" TextColor="White" FontSize="30" WidthRequest="275" HeightRequest="60" HorizontalOptions="CenterAndExpand"/>
+                <Button x:Name="BtnArea" ClassId="BtnArea" Text="Area" TextTransform="None" Clicked="OnButtonClick" BackgroundColor="Black" TextColor="White" FontSize="30" WidthRequest="275" HeightRequest="60" HorizontalOptions="CenterAndExpand"/>
+                <Button x:Name="BtnSource" ClassId="BtnSource" Text="Source" TextTransform="None" Clicked="OnButtonClick" BackgroundColor="Black" TextColor="White" FontSize="30" WidthRequest="275" HeightRequest="60" HorizontalOptions="CenterAndExpand"/>
+                <Button x:Name="BtnLabour" ClassId="BtnLabour" Text="Labour" TextTransform="None" Clicked="OnButtonClick" BackgroundColor="Black" TextColor="White" FontSize="30" WidthRequest="275" HeightRequest="60" HorizontalOptions="CenterAndExpand"/>
+                <Button x:Name="BtnService" ClassId="BtnService" Text="Service" TextTransform="None" Clicked="OnButtonClick" BackgroundColor="Black" TextColor="White" FontSize="30" WidthRequest="275" HeightRequest="60" HorizontalOptions="CenterAndExpand"/>
+                <Button x:Name="BtnStatus" ClassId="BtnStatus" Text="Status" TextTransform="None" Clicked="OnButtonClick" BackgroundColor="Black" TextColor="White" FontSize="30" WidthRequest="275" HeightRequest="60" HorizontalOptions="CenterAndExpand"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

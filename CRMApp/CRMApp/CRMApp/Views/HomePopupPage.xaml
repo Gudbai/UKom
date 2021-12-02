@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+    x:Class="CRMApp.Views.HomePopupPage">
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation 
+        PositionIn="Center"
+        PositionOut="Center"
+        ScaleIn="1.2"
+        ScaleOut="0.8"
+        DurationIn="400"
+        DurationOut="0"
+        EasingIn="SinOut"
+        EasingOut="SinIn"
+        HasBackgroundAnimation="True"/>
+    </pages:PopupPage.Animation>
+
+    <StackLayout VerticalOptions="CenterAndExpand" BackgroundColor="#ebebeb" Margin="20" Padding="15" MinimumHeightRequest="100">
+        <Label Text="Settings" TextColor="Black" FontSize="40" HorizontalTextAlignment="Start"/>
+        <BoxView BackgroundColor="Black" MinimumHeightRequest="5" HeightRequest="5"/>
+        <Label x:Name="LblAccSettings" Text="Account Settings" TextColor="Black" FontSize="20" Margin="0,5" BackgroundColor="Transparent" HorizontalTextAlignment="Start"/>
+        <Label x:Name="LblLogout" Text="Log Out" TextColor="Red" FontSize="20" Margin="0,5" BackgroundColor="Transparent" HorizontalTextAlignment="Start"/>
+    </StackLayout>
+
+</pages:PopupPage>

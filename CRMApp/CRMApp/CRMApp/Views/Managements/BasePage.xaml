@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CRMApp.Views.Managements.BasePage"
+             BackgroundColor="#ebebeb">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Management" TextColor="Black" FontSize="50" Margin="0,75,0,0" HorizontalOptions="CenterAndExpand"/>
+            <Label Text="Menu" TextColor="Black" FontSize="50" HorizontalOptions="CenterAndExpand" />
+
+            <Button x:Name="BtnForms" Text="Manage Forms" TextTransform="None" Clicked="OnButtonClick" BackgroundColor="Black" TextColor="White" FontSize="30" Margin="0,75,0,30" WidthRequest="275" HeightRequest="60" HorizontalOptions="CenterAndExpand"/>
+            <Button x:Name="BtnMasters" Text="Manage Master Files" TextTransform="None" Clicked="OnButtonClick" BackgroundColor="Black" TextColor="White" FontSize="22" WidthRequest="275" HeightRequest="60" HorizontalOptions="CenterAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

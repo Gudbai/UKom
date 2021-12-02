@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:navpage="clr-namespace:CRMApp.Views"
+            xmlns:navpage2="clr-namespace:CRMApp.Views.Managements"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            x:Class="CRMApp.Views.HomeNavPage"
+            SelectedTabColor="White"
+            UnselectedTabColor="Gray"
+            NavigationPage.HasNavigationBar="False">
+    <!--Pages can be added as references or inline-->
+    <navpage:HomePage Title="Home" IconImageSource="Home.png"/>
+    <navpage2:BasePage Title="Manage" IconImageSource="Manage.png"/>
+</TabbedPage>

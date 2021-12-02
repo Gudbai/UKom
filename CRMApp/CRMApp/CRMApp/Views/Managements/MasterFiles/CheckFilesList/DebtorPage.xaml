@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CRMApp.Views.Managements.MasterFiles.CheckFilesList.DebtorPage"
+             xmlns:syncfusion="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms" 
+             xmlns:local="clr-namespace:CRMApp.Models.MasterFiles"
+             BackgroundColor="#ebebeb"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.BindingContext>
+        <local:DebtorInfoRepository x:Name="viewModel" />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid HeightRequest="60" MinimumHeightRequest="60" BackgroundColor="Black">
+                <ImageButton x:Name="BtnBack" Source="BackButton.png" Scale="1" Clicked="OnButtonClick" HorizontalOptions="Start" Padding="10" BackgroundColor="Transparent"/>
+                <Label Text="Check Debtor" FontSize="30" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            </Grid>
+
+            <SearchBar x:Name="SBFilterText"
+                       Placeholder="Search Debtor"
+                       HorizontalOptions="CenterAndExpand"
+                       TextChanged="OnFilterTextChanged"/>
+            
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Label Text="Search:" TextColor="Black" FontSize="20" VerticalOptions="CenterAndExpand"/>
+                <Picker x:Name="ColumnsList"
+                    SelectedIndexChanged="OnColumnsSelectionChanged"
+                    WidthRequest="200"
+                    TextColor="Black">
+                    <Picker.Items>
+                        <x:String>All Columns</x:String>
+                        <x:String>Debtor Code</x:String>
+                        <x:String>Debtor Name</x:String>
+                        <x:String>Debtor Email</x:String>
+                        <x:String>Debtor Address</x:String>
+                        <x:String>Debtor Phone</x:String>
+                    </Picker.Items>
+                    <Picker.SelectedIndex>0</Picker.SelectedIndex>
+                </Picker>
+            </StackLayout>
+            
+
+            <syncfusion:SfDataGrid x:Name="dataGrid"
+                                   ItemsSource="{Binding DebtorInfoCollection}"
+                                   HorizontalOptions="CenterAndExpand"
+                                   VerticalOptions="CenterAndExpand"
+                                   HeightRequest="500"
+                                   AllowSorting="True"
+                                   ColumnSizer="Auto"
+                                   SelectionMode="SingleDeselect"
+                                   GridTapped="OnGridTapped">
+                
+                <syncfusion:SfDataGrid.Columns x:TypeArguments="syncfusion:Columns">
+                    <syncfusion:GridTextColumn HeaderText="ID" 
+                                               MappingName="DebtorID"
+                                               IsHidden="True"/>
+                    <syncfusion:GridTextColumn HeaderText="Code" 
+                                               MappingName="DebtorCode"/>
+                    <syncfusion:GridTextColumn HeaderText="Name"
+                                               MappingName="DebtorName"/>
+                    <syncfusion:GridTextColumn HeaderText="Email" 
+                                               MappingName="DebtorEmail"/>
+                    <syncfusion:GridTextColumn HeaderText="Address"
+                                               MappingName="DebtorAddress"/>
+                    <syncfusion:GridTextColumn HeaderText="Phone" 
+                                               MappingName="DebtorPhone"/>
+                </syncfusion:SfDataGrid.Columns>
+
+                <syncfusion:SfDataGrid.GridStyle>
+                    <syncfusion:DataGridStyle HeaderBackgroundColor="LightGray"/>
+                </syncfusion:SfDataGrid.GridStyle>
+
+                <syncfusion:SfDataGrid.SortColumnDescriptions>
+                    <syncfusion:SortColumnDescription ColumnName="DebtorCode" 
+                                          SortDirection="Ascending" />
+                </syncfusion:SfDataGrid.SortColumnDescriptions>
+
+            </syncfusion:SfDataGrid>
+
+            <Button x:Name="BtnSelected" Text="Edit Selected" Margin="0, 5, 30, 10" HeightRequest="40" TextColor="White" HorizontalOptions="EndAndExpand" BackgroundColor="Black" Clicked="OnButtonClick"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

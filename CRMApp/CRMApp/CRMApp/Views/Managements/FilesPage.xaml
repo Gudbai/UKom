@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CRMApp.Views.Managements.FilesPage"
+             BackgroundColor="#ebebeb"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid HeightRequest="60" BackgroundColor="Black">
+                <ImageButton x:Name="BtnBack" Source="BackButton.png" Scale="1" Clicked="OnButtonClick" HorizontalOptions="Start" Padding="10" BackgroundColor="Transparent"/>
+            </Grid>
+
+            <Label Text="Master File" TextColor="Black" FontSize="50" Margin="0,50,0,0" HorizontalOptions="CenterAndExpand"/>
+            <Label Text="Management" TextColor="Black" FontSize="50" HorizontalOptions="CenterAndExpand" />
+            <Label Text="Menu" TextColor="Black" FontSize="50" HorizontalOptions="CenterAndExpand" />
+
+            <Button x:Name="BtnSetup" Text="Setup Master File" TextTransform="None" Clicked="OnButtonClick" BackgroundColor="Black" TextColor="White" FontSize="30" Margin="0,75,0,30" WidthRequest="275" HeightRequest="60" HorizontalOptions="CenterAndExpand"/>
+            <Button x:Name="BtnCheck" Text="Check Master File" TextTransform="None" Clicked="OnButtonClick" BackgroundColor="Black" TextColor="White" FontSize="30" WidthRequest="275" HeightRequest="60" HorizontalOptions="CenterAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

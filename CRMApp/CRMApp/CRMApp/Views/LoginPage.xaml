@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:CRMApp.Controls"
+             x:Class="CRMApp.Views.LoginPage"
+             BackgroundColor="#ebebeb"
+             NavigationPage.HasNavigationBar="False">
+    <StackLayout x:Name="MasterLayout">
+        <Grid x:Name="TopGrid" Margin="0,0,0,75">
+            <Image x:Name="CardBackground" Source="CardBackground.png"/>
+            <controls:StrokeLabel x:Name="AppText" Text="Customer" TextColor="White" FontSize="12" StrokeColor="#474746" StrokeThickness="8" VerticalOptions="EndAndExpand" Margin="10,0,0,40"/>
+            <controls:StrokeLabel x:Name="AppText2" Text="Relationship Management" TextColor="White" FontSize="12" StrokeColor="#474746" StrokeThickness="8" VerticalOptions="EndAndExpand" Margin="10,0,0,10"/>
+        </Grid>
+
+        <StackLayout x:Name="LoginEntryStack" VerticalOptions="StartAndExpand">
+            <StackLayout.Padding>
+                <OnIdiom x:TypeArguments="Thickness" 
+                         Phone="40,0,40,0" 
+                         Tablet="140,150,140,0"/>
+            </StackLayout.Padding>
+
+            <ActivityIndicator x:Name="ActivitySpinner" Color="Cyan" VerticalOptions="CenterAndExpand" IsRunning="False" IsVisible="False"/>
+
+            <Label x:Name="LblLogin" Text="Login" FontSize="35" HorizontalOptions="CenterAndExpand" TextColor="Black"/>
+            <Entry x:Name="EntryUsername" Placeholder="Username" PlaceholderColor="Gray" TextColor="Black" MaxLength="30"/>
+            <Entry x:Name="EntryPassword" Placeholder="Password" PlaceholderColor="Gray" TextColor="Black" IsPassword="True" MaxLength="30"/>
+            <Label x:Name="LblForgotPassword" Text="Forgot Password?" TextDecorations="Underline" FontSize="15" HorizontalOptions="EndAndExpand" TextColor="Black"/>
+            <Button x:Name="BtnSignIn" Text="Sign In" BackgroundColor="Black" Clicked="SignInProcedure"/>
+        </StackLayout>
+
+        <Grid x:Name="BottomGrid">
+            <controls:StrokeLabel x:Name="LblVersion" Text="Version 1.562" TextColor="White" StrokeColor="#474746" FontSize="5" StrokeThickness="3" VerticalOptions="End"/>
+        </Grid>
+    </StackLayout>
+</ContentPage>

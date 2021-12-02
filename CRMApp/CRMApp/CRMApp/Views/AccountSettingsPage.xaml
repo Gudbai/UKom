@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CRMApp.Views.AccountSettingsPage"
+             BackgroundColor="#ebebeb"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid HeightRequest="60" MinimumHeightRequest="60" BackgroundColor="Black">
+                <ImageButton x:Name="BtnBack" Source="BackButton.png" Scale="1" Clicked="OnButtonClick" HorizontalOptions="Start" Padding="10" BackgroundColor="Transparent"/>
+                <Label Text="Account Settings" FontSize="30" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            </Grid>
+
+            <ScrollView Padding="10,0,10,0">
+                <StackLayout Spacing="5" Padding="0,10,0,10">
+                    <StackLayout Spacing="-3">
+                        <Label Text="Name" FontSize="23" TextColor="Gray"/>
+                        <Label Text="Ascended Galang" FontSize="23" TextColor="Black"/>
+                    </StackLayout>
+
+                    <StackLayout Spacing="-3">
+                        <Label Text="Email" FontSize="23" TextColor="Gray"/>
+                        <Label Text="galang123@gmail.com" FontSize="23" TextColor="Black"/>
+                    </StackLayout>
+
+                    <StackLayout Spacing="-3">
+                        <Label Text="Phone" FontSize="23" TextColor="Gray"/>
+                        <Label Text="+01-234-567-89" FontSize="23" TextColor="Black"/>
+                    </StackLayout>
+
+                    <StackLayout Spacing="-3">
+                        <Label Text="Password" FontSize="23" TextColor="Gray"/>
+                        <Label Text="*****************" FontSize="23" TextColor="Black"/>
+                    </StackLayout>
+
+                    <StackLayout Spacing="-3">
+                        <Label Text="Company" FontSize="23" TextColor="Gray"/>
+                        <Label Text="Galang Corps" FontSize="23" TextColor="Black"/>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
